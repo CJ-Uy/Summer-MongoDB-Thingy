@@ -1,4 +1,3 @@
-Did u forget a requirements.txt?
 
 changed pipfile to:
 [requires]
