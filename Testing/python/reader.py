@@ -33,23 +33,31 @@ data_2026 = []
 #     for students in range(df[batch].index):
 #         data[students].append(Student())
 
-#temporary
-for x in range(len(df_2022.index)):
-    data_2022.append(Student())
+# #temporary
+# for x in range(len(df_2022.index)):
+#     data_2022.append(Student())
 
 for index, row in df_2022.iterrows():
-    #name
+    #bacth (batch)
+    batch = "2022"
+
+    #section (section)
+    section = row['Section']
+
+    #name (last_name | first_name | middle_name)
     full_name = row['Name of Student']
-    if(full_name.find(',') == -1):
-        print(full_name)
+    if(full_name.find(',') == -1): #assuming forgotten comma and last name is only 1 word
+        last_name = full_name.split()[0]
+        comma_pos = full_name.find(' ')
     else:
         comma_pos = full_name.find(',')
         last_name = full_name[0:comma_pos]
-        first_name = full_name[comma_pos + 1 : len(full_name) - 2]
-        if(full_name.find('.') == -1):
-            middle_name = ""
-        else:
-            middle_name = full_name[len(full_name) - 2 : len(full_name)]
+        
+    first_name = full_name[comma_pos + 1 : len(full_name) - 2]
+    if(full_name.find('.') == -1): #assuming no middle name
+        middle_name = ""
+    else:
+        middle_name = full_name[len(full_name) - 2 : len(full_name)]
     
 
 

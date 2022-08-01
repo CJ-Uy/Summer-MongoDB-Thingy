@@ -1,14 +1,27 @@
+
+N O T E S
+
+----------------------------------------------------
+
 changed pipfile to:
 [requires]
 python_version = "*"
 
-
-import receipts.models as m
-m.Student(firstname="test",middlename="tester",lastname="testing",batch=2024).save()
-
-you can make a student with Student(firstname="", middlename="", lastname="", batch=2024).save()
-
+----------------------------------------------------
 
 Added dependencies: (its also in the pipfile)
 pandas
 openpyxl
+
+----------------------------------------------------
+
+The excel files have different sheets and when downloading them as csv
+you can only download each sheet as their own csv
+
+So I just made my reader be able to read excel files with multiple sheets
+
+----------------------------------------------------
+
+Section property to the Student class to be added
+
+----------------------------------------------------
