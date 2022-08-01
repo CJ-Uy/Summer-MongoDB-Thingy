@@ -1,4 +1,14 @@
-
 changed pipfile to:
 [requires]
 python_version = "*"
+
+
+import receipts.models as m
+m.Student(firstname="test",middlename="tester",lastname="testing",batch=2024).save()
+
+you can make a student with Student(firstname="", middlename="", lastname="", batch=2024).save()
+
+
+Added dependencies: (its also in the pipfile)
+pandas
+openpyxl
