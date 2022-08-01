@@ -1,13 +1,14 @@
 #Couldn't import it so I modified it just so i can work with the data
 # good luck connecting them hehehe
 
-class Student():
-  def __init__(self, firstname, middlename, lastname, batch, receipts):
-    self.firstname = firstname
-    self.middlename = middlename
-    self.lastname = lastname
-    self.batch = batch
-    self.receipts = receipts
+class StudentCopy():
+  def __init__(self):
+    self.firstname = None
+    self.middlename = None
+    self.lastname = None
+    self.section = None
+    self.batch = None
+    self.receipts = None
 
     @property
     def name(self):
