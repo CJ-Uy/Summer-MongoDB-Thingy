@@ -12,6 +12,7 @@ python_version = "*"
 Added dependencies: (its also in the pipfile)
 pandas
 openpyxl
+python-dotenv
 
 ----------------------------------------------------
 

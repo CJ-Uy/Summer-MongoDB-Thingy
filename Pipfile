@@ -16,6 +16,7 @@ flask-bootstrap = "*"
 flask-nav = "*"
 pandas = "*"
 openpyxl = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
