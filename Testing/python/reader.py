@@ -1,6 +1,4 @@
 import pandas as pd
-from student import Student
-
 
 from mongoengine import connect
 from dotenv import load_dotenv
@@ -30,12 +28,6 @@ df_2025 = pd.read_excel(xls, "Grade 9")
 df_2025 = pd.read_excel(xls, "Grade 8")
 df_2026 = pd.read_excel(xls, "Grade 7")
 
-data_2022 = []
-data_2023 = []
-data_2024 = []
-data_2025 = []
-data_2026 = []
-
 
 # df = [df_2022, df_2023, df_2024, df_2025, df_2026]
 # data = [data_2022, data_2023, data_2024, data_2025, data_2026]
@@ -47,9 +39,9 @@ data_2026 = []
 # for x in range(len(df_2022.index)):
 #     data_2022.append(Student())
 
-for index, row in df_2023.iterrows():
+for index, row in df_2026.iterrows():
     #bacth (batch)
-    batch = "2023"
+    batch = "2026"
 
     #section (section)
     section = row['Section']
