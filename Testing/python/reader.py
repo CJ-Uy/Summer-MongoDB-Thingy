@@ -1,16 +1,15 @@
-from json import load
 import pandas as pd
 from student import Student
 
+
+from mongoengine import connect
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 DB_HOST = os.getenv("DB_HOST")
 SECRET_KEY = os.getenv("SECRET_KEY")
-
-print(DB_HOST)
-print(SECRET_KEY)
+connect(host=DB_HOST)
 
 #### Not gonna lie idk where this file is supposed to be in the directory ###
 import sys
@@ -37,6 +36,7 @@ data_2024 = []
 data_2025 = []
 data_2026 = []
 
+
 # df = [df_2022, df_2023, df_2024, df_2025, df_2026]
 # data = [data_2022, data_2023, data_2024, data_2025, data_2026]
 # for batch in range(len(df)):
@@ -47,9 +47,9 @@ data_2026 = []
 # for x in range(len(df_2022.index)):
 #     data_2022.append(Student())
 
-for index, row in df_2022.iterrows():
+for index, row in df_2023.iterrows():
     #bacth (batch)
-    batch = "2022"
+    batch = "2023"
 
     #section (section)
     section = row['Section']
@@ -68,11 +68,11 @@ for index, row in df_2022.iterrows():
         middle_name = ""
     else:
         middle_name = full_name[len(full_name) - 2 : len(full_name)]
-    
-    data_2022.append(Student(first_name, middle_name, last_name, section, batch))
+    print("{}, {} {} - {} {}".format(last_name, first_name, middle_name, section, batch))
+    m.Student(firstname = first_name, middlename= middle_name, lastname = last_name, section = section, batch = batch).save()
 
-for student in data_2022:
-    print(student.first_name + "\t\t" + student.middle_name + "\t" + student.last_name + "\t" + student.section + "\t" + student.batch)
+
+
 
 
         
